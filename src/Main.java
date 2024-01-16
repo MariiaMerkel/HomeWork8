@@ -18,7 +18,7 @@ public class Main {
         library.printBooks();
 
         library.printBookByTitle("Снежная Королева");
-        library.changPublicationYear("Приключения Оливера Твиста", 1839);
+        library.changePublicationYear("ПриключОливера Твиста", 1839);
         library.printBookByTitle("Приключения Оливера Твиста");
     }
 

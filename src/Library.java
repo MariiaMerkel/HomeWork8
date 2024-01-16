@@ -40,7 +40,7 @@ public class Library {
         return null;
     }
 
-    public void changPublicationYear(String title, int year) {
+    public void changePublicationYear(String title, int year) {
         final Book book = this.findBookByTitle(title);
         if (book != null) {
             book.setPublicationYear(year);
