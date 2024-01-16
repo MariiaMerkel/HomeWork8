@@ -1,17 +1,42 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        Author walterScott = new Author("Вальтер", "Скотт");
-        Author hansChristianAndersen = new Author("Ханс Кристиан", "Андерсен");
-        Author charlesDickens = new Author("Чарльз", "Диккенс");
 
-        Book snowQueen = new Book("Снежная Королева", hansChristianAndersen, 1844);
-        Book waverley = new Book("Уэверли или Шестьдесят лет назад", walterScott, 1814);
-        Book adventuresOfOliverTwist = new Book("Приключения Оливера Твиста", charlesDickens, 1837);
+        System.out.println(generateInt(3, 5));
+        System.out.println(isPalindromeFiveLetterWord("ротор"));
+        printDivisors(12);
+        printNumberSumOfMultidigitNumber(456);
+    }
 
-        adventuresOfOliverTwist.setPublicationYear(1839);
+    public static int generateInt(int a, int b) {
+        return new Random().nextInt(a, ++b);
+    }
 
-        System.out.println(snowQueen);
-        System.out.println(waverley);
-        System.out.println(adventuresOfOliverTwist);
+    public static boolean isPalindromeFiveLetterWord(String word) {
+        for (int i = 0, j = word.length() - 1; i < word.length() / 2; i++, j--) {
+            if (word.charAt(i) != word.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void printDivisors(int a) {
+        for (int i = 1; i <= a / 2; i++) {
+            if (a % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void printNumberSumOfMultidigitNumber(int a) {
+        int sum = 0;
+        while (a > 0) {
+            sum += a%10;
+            a /= 10;
+        }
+        System.out.println(sum);
     }
 }
