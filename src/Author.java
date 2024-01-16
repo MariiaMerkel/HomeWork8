@@ -8,15 +8,12 @@ public class Author {
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
     }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
     public String getFullName() {
         return fullName;
+    }
+
+    @Override
+    public String toString() {
+        return "Автор: " + fullName + '.';
     }
 }
