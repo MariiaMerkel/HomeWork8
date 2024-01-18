@@ -1,3 +1,7 @@
+package ru.merkel.objects.services;
+
+import java.util.Arrays;
+
 public class Library {
     private Book[] books;
 
@@ -47,4 +51,25 @@ public class Library {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Arrays.equals(books, library.books);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(books);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder titlesBooks = new StringBuilder();
+        for (int i = 0; i < books.length; i++) {
+            titlesBooks.append(books[i].toString() + "\n");
+        }
+        return titlesBooks.toString();
+    }
 }
